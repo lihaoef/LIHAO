@@ -27,6 +27,9 @@ namespace JsonTest
             Console.WriteLine(d3.GetName());
             Console.Read();
             var n = 3 + d2;
+
+
+
         }
     }
 
