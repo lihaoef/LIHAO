@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.IO;
 
 using System.Xml.Serialization;
+using System.Threading;
 
 namespace RegexTest
 {
@@ -25,7 +26,8 @@ namespace RegexTest
             string block = File.ReadAllText(@".\test.txt");
             //Regex reg = new Regex(@"FN .*?ENDFN.*", RegexOptions.Singleline);
             //Regex reg = new Regex(@"\d1234+");
-            var matches = Regex.Matches(block, @"", RegexOptions.Singleline);
+            var ma = Regex.Match(block, @"\w*");
+            var matches = Regex.Matches(block, @"\w*");
 
             foreach (Match item in matches)
             {
@@ -34,13 +36,44 @@ namespace RegexTest
                     
                 }
             }
+            Dictionary<string, int> dic = new Dictionary<string, int>();
+            dic.Add("1", 1);
+            dic.Add("2", 2);
+            dic.Add("3", 3);
+            AutoResetEvent are = new AutoResetEvent(true);
+            are.Set();
+
+            ManualResetEventSlim mre = new ManualResetEventSlim(true);
+            
+
+            dic.Keys.ToList();
+            foreach (var item in dic.Keys.ToList())
+            {
+                dic[item] = 0;
+            }
+
+            Match match = Regex.Match("SV01 SET A RETURN M1", "(\\S+)[ \\t]+(\\S+)(?:(?:[ \\t]+(?!RETURN|TIMEOUT|WAIT)((?:\"[^\"]+\")|[^\"\\s]+))+)(?:[ \\t]+RETURN(?:[ \\t]+(?!TIMEOUT|WAIT)(\\S+))+)?(?:[ \\t]+TIMEOUT(?:[ \\t]+(\\S+)))?([ \\t]+WAIT)?");
             //var matches = reg.Matches(block);
             //foreach (Match item in matches)
             //{
-            
+
             //}
             string sab = "ab    c  \t de";
             var matchers =  Regex.Matches(sab, @"\w+");
+            Dictionary<string, object> dic2 = new Dictionary<string, object>();
+            dic2.Add("1", 1);
+            dic2.Add("2", "2");
+            dic2.Add("3", new object());
+
+            if (double.TryParse(dic2["1"].ToString(), out double my))
+            {
+                Console.WriteLine(my);
+            }
+
+            Match li = Regex.Match("			CONTROLLER SLEEP 1000		 222", @"\s*CONTROLLER[ \t]+(\w+)(?:[ \t]+(\w+))*");
+
+            
+
             Console.Read();
         }
     }

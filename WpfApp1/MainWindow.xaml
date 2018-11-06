@@ -8,6 +8,11 @@
         Title="MainWindow" Height="450" Width="800"  WindowStyle="None" Background="#7FD95555">
     <Grid>
         <Button Margin="0,0,247.6,194" Click="Button_Click">b1</Button>
-        <WebBrowser x:Name="web" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="http://www.cygnusbio.com" Margin="48,261,0,-0.4"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="127,323,0,0" VerticalAlignment="Top" IsChecked="{Binding IsChecked}"/>
+        <DataGrid Margin="166,266,-0.4,0.2" ItemsSource="{Binding Items}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="content " Binding="{Binding}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
