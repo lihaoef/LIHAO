@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button Click="Button_Click" >click</Button>
+        <Image Source="exit.png" ></Image>
+        <Button Click="Button_Click" Margin="208,91,0.4,-0.2" >click</Button>
     </Grid>
 </Window>

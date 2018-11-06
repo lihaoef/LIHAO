@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"  WindowStyle="None" Background="#7FD95555">
+        Title="MainWindow" Height="450" Width="800" >
+    <Window.Background>
+        <ImageBrush ImageSource="{Binding MYPath}"/>
+    </Window.Background>
     <Grid>
         <Button Margin="0,0,247.6,194" Click="Button_Click">b1</Button>
         <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="127,323,0,0" VerticalAlignment="Top" IsChecked="{Binding IsChecked}"/>

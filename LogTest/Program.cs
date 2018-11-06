@@ -11,7 +11,7 @@ namespace LogTest
     {
         static void Main(string[] args)
         {
-            log4net.Config.XmlConfigurator.Configure();
+            //log4net.Config.XmlConfigurator.Configure();
             //LogManager.GetLogger(typeof())
             LT test = new LT();
             test.OutputLog();
@@ -20,6 +20,7 @@ namespace LogTest
             //Console.WriteLine("(\\S+)[ \\t]+(\\S+)(?:(?:[ \\t]+(?!RETURN|TIMEOUT|WAIT)((?:\"[^\"]+\")|[^\"\\s]+))+)(?:[ \\t]+RETURN(?:[ \\t]+(?!TIMEOUT|WAIT)(\\S+))+)?(?:[ \\t]+TIMEOUT(?:[ \\t]+(\\S+)))?([ \\t]+WAIT)?)");
             Console.Read();
             log4net.Appender.FileAppender fileAppender = new log4net.Appender.FileAppender();
+            log4net.Appender.RollingFileAppender rollingFileAppender = new log4net.Appender.RollingFileAppender();
             
         }
     }
@@ -30,6 +31,8 @@ namespace LogTest
         {
              ILog logger = LogManager.GetLogger(typeof(LT));
             logger.Info("this is the helloworld.");
+            logger.Error("test", new Exception("this is a exception"));
+            logger.Debug("this is debug");
         }
     }
 }

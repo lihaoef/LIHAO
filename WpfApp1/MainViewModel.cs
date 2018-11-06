@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace WpfApp1
 {
@@ -20,6 +21,20 @@ namespace WpfApp1
             get { return _items; }
             set { _items = value; }
         }
+
+        private string _path;
+
+        public string MYPath
+        {
+            get { return _path; }
+            set { _path = value;
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("MYPath"));
+                }
+            }
+        }
+
 
 
         private bool _isChecked;

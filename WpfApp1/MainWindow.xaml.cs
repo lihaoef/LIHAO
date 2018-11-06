@@ -51,6 +51,11 @@ namespace WpfApp1
             //    a++;
             //}
             MainViewModel mainViewModel = this.DataContext as MainViewModel;
+            mainViewModel.MYPath = System.IO.Path.GetFullPath("../../Resources/Images/exit.png");
+            Image image = new Image();
+            BitmapImage bitmap = new BitmapImage(new Uri(System.IO.Path.GetFullPath("../../Resources/Images/exit.png")));
+            //mainViewModel.MYPath = bitmap.Clone();
+            
             SynchronizationContext synchronizationContext = SynchronizationContext.Current;
             Task.Run(() =>
             {
@@ -59,14 +64,16 @@ namespace WpfApp1
                 {
                     //this.Dispatcher.Invoke(new Action(() =>
                     //{
-                    Thread.
-                        mainViewModel.Items.Add(i.ToString());
+                    //Thread.
+                    //    mainViewModel.Items.Add(i.ToString());
 
                     //}));
                 }
             });
             
         }
+
+
     }
 
     public class Test
