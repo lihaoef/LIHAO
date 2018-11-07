@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogTest", "LogTest\LogTest.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogTestDLL", "LogTestDLL\LogTestDLL.csproj", "{744A6C9F-28E0-4141-83AF-4E4DB6BF02C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogTestB", "LogTestB\LogTestB.csproj", "{BA932C8C-AC0D-4A6C-9F3E-037D93FB7B8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{744A6C9F-28E0-4141-83AF-4E4DB6BF02C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{744A6C9F-28E0-4141-83AF-4E4DB6BF02C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{744A6C9F-28E0-4141-83AF-4E4DB6BF02C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA932C8C-AC0D-4A6C-9F3E-037D93FB7B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA932C8C-AC0D-4A6C-9F3E-037D93FB7B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA932C8C-AC0D-4A6C-9F3E-037D93FB7B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA932C8C-AC0D-4A6C-9F3E-037D93FB7B8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

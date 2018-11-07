@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using log4net;
+using LogTestDLL;
 
-namespace LogTestDLL
+namespace LogTestB
 {
-    //[TraceMethod]
-    public class Class1
+    public class DT
     {
         public void Test()
         {
-            LogManager.GetLogger(typeof(Class1)).Info("this is the logtestDLL");
+
+        }
+
+        public void Test2()
+        {
+
         }
     }
 }
